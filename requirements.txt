@@ -1,5 +1,5 @@
 streamlit
-tensorflow
+tflite-runtime
 pillow
 numpy
 pandas
