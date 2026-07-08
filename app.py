@@ -1,5 +1,5 @@
 import streamlit as st
-import tflite_runtime.interpreter as tflite
+import tflite_runtime.interpreter as tflite  # Gunakan tflite_runtime
 from PIL import Image
 import numpy as np
 import time
@@ -13,7 +13,8 @@ st.set_page_config(page_title="APLIKASI SKRIPSI", page_icon="🔍", layout="wide
 # --- LOAD MODEL TFLITE ---
 @st.cache_resource
 def load_tflite_model(model_path):
-    interpreter = tf.lite.Interpreter(model_path=model_path)
+    # Gunakan tflite.Interpreter, bukan tf.lite.Interpreter
+    interpreter = tflite.Interpreter(model_path=model_path)
     interpreter.allocate_tensors()
     return interpreter
 
@@ -21,6 +22,7 @@ def load_tflite_model(model_path):
 interpreter = load_tflite_model('model_dioptimasi.tflite')
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
+
 
 # --- FUNGSI PREDIKSI TFLITE ---
 def predict(img, interpreter):
