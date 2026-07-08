@@ -175,7 +175,7 @@ elif menu == "Prediksi":
                         prob_fake = 1 - prob_real
                         
                         # Terapkan Threshold kustom
-                        THRESHOLD = 0.7
+                        THRESHOLD = 0.6
                         if prob_real > THRESHOLD:
                             hasil_label = "ASLI (REAL)"
                             prob_final = prob_real
