@@ -67,7 +67,7 @@ st.markdown("""
 @st.cache_resource
 def load_my_model():
     # Pastikan file model berada di folder yang sama dengan app.py
-    model = tf.keras.models.load_model('Dataset Skripsi Split Camera Smartphone & Profesional V2.keras')
+    model = tf.keras.models.load_model('model_dioptimasi.tflite')
     return model
 
 model = load_my_model()
